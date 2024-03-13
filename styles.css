@@ -170,8 +170,8 @@ h2 {
 }
 
 .pyr {
-    padding :3rem;
-    width: 40rem;
+    padding: 3rem;
+    width: 30rem;
 }
 
 .backgroundtwo{
@@ -180,6 +180,9 @@ h2 {
     margin: 0 auto;
     flex-direction: row-reverse;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .lastImage{
@@ -188,26 +191,176 @@ h2 {
     width: 30rem;
 }
 
+.toggler {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .menu-box {
+    position: relative;
+    width: 35px;
+    height: 4px;
+    border-radius: 10px;
+    transition: ease 200ms;
+    background-color: black;
+  
+  }
+  
+  .menu-box::after,
+  .menu-box::before
+  {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 10px;
+    top: 10px;
+  }
+  
+  .menu-box::before {
+    top: -10px;
+  }
+  
+  .toggler:checked ~ .menu-box{
+    transform: rotate(45deg);
+    background-color: #6FC247;
+  }
+  
+  .toggler:checked ~ .menu-box::after{
+    transform: rotate(90deg);
+    top: 0;
+    background-color: #6FC247;
+  }
+  
+  .toggler:hover ~ .menu-box,
+  .toggler:hover ~ .menu-box::after,
+  .toggler:hover ~ .menu-box::before
+  {
+    background-color: #6FC247;
+  
+  }
+  
+  .toggler:checked ~ .menu-box::before{
+   display: none;
+   
+  }
+  
+  .toggler:checked ~ .navbar{
+    transform: translateX(0);
+  }
+  
+  .toggler:checked ~ .nav-text{
+    visibility: hidden;
+  }
+  
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo {
+        margin-inline-start: 1rem; /* Remove left margin for logo */
+      }
 
+    .navbtn {
+        margin: 1rem
+    }
+      
+    ul {
+        display: flex;
+        display: none;
+      }
+      
+    .links {
+        flex: 1; /* Occupy remaining space */
+      }
+    
+    .divbtn {
+        margin-inline-end: 0; /* Remove right margin for button */
+      }
 
-/* .testing_flex {
-  flex: 3;
-  display: flex;
-  height: 400px;
-  align-items: flex-end;
-  justify-content: center;
-  padding-inline: 2rem;
-  gap: 1rem;
-  flex-wrap: wrap;
-} */
+    .heading {
+        font-size: 2rem;
+      }
 
-/* .testing_flex_box.one,
-.testing_flex_box.three,
-.testing_flex_box.two {
-  width: 150px;
-} */
+    .firmimg {
+        height: 100%;
+        width: 100%;
+        }
 
-/* .testing_flex.two{
-    align-self: center;
-} */
+     .writeup{
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+     }
+
+     .firstimg{
+       margin-top: 1.5rem;
+       margin-bottom: 1.5rem;
+       height: 100%;
+       width: 100%;
+    }
+
+    .firms {
+    text-align: center;
+    }
+
+    .within{
+        font-size: 0.8rem;
+    }
+
+    .backgroundtwo{
+        flex-direction: column-reverse;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .pyr{
+        padding: 1.5rem;
+        margin-inline-start: 0;
+        text-align: center;
+    }
+
+    .lastImage{
+        height: 21rem;
+        width: 23rem;
+    }
+      }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {
+    div.example {
+        font-size: 80px;
+      }
+
+    img {
+        width: 100%;
+        height: auto;
+      }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+/* @media only screen and (orientation: landscape) {
+    body {
+      background-color: lightblue;
+    }
+  } */ */
